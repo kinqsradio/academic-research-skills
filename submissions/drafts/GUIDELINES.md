@@ -1,0 +1,3 @@
+# Working drafts
+
+Keep outlines, manuscripts, abstracts, and response drafts here as canonical Markdown (`.md`). The team edits and reviews this source in Git before copying finalized content to a shared document. Do not maintain a parallel DOCX draft unless explicitly requested. Identify the document purpose, version, and evidence inputs. Use visible markers for unresolved claims and missing requirements. Record significant revisions in the draft or a linked change note. Preserve a reviewed draft in submissions/version/ before making changes that would invalidate a review's line or section references.

@@ -1,0 +1,9 @@
+# Repository maintenance scripts
+
+Keep small, portable maintenance helpers here. Use Python 3.10+ standard-library code unless a documented task requires more. Resolve the repository from the script location, avoid personal paths, and offer a read-only check when generating files. Do not download papers, call models, or modify global configuration as a side effect of validation.
+
+`validate_repository.py` checks folder guidance, local links, skill metadata, portable content, and PDF coverage plus matching source IDs and filenames in both paper registers. It rejects every PDF in the Git index, including newly staged files anywhere in the repository; `.pdf` detection is case insensitive. The index check requires Git and Git metadata; a copied folder without metadata reports that this check was skipped.
+
+By default, a clone may omit local PDFs under `papers/` only when their file links have matching stable IDs in both `papers/DOWNLOADS.md` and `papers/REFERENCES.md`. It reports the number of registered PDFs absent locally. Other missing links still fail, and every locally present paper PDF requires both records. Run `python3 scripts/validate_repository.py --require-local-papers` before research that needs the registered files: this also fails when a registered PDF is absent. Neither mode downloads files or verifies PDF readability, reference accuracy, claim support, distribution rights, research behavior, or live-host execution.
+
+`research_status.py` reads a project run manifest and reports validated pending tasks. It checks dependency cycles, recorded human gates, existing completion evidence and input SHA-256 snapshots, but does not execute tasks or authenticate decisions. See [manifest contract](../skills/academic-pipeline/RUN_MANIFEST.md). Run its behavioral checks with `python3 scripts/research_status_tests.py`. Tests use temporary synthetic files and do not call providers or alter research artifacts.

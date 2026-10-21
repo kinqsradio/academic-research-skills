@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "replace-with-project-run-id",
+  "status": "paused",
+  "tasks": [
+    {
+      "id": "scope",
+      "depends_on": [],
+      "status": "pending",
+      "owner": "human-research-lead",
+      "inputs": [],
+      "outputs": ["docs/decisions/scope/project-scope.md"],
+      "evidence": [],
+      "approval": {"required": false, "state": "not_required", "decision_path": null},
+      "receipt": null
+    },
+    {
+      "id": "evidence",
+      "depends_on": ["scope"],
+      "status": "pending",
+      "owner": "evidence-researcher",
+      "inputs": [],
+      "outputs": ["docs/literature/evidence/project-evidence.md"],
+      "evidence": [],
+      "approval": {"required": true, "state": "pending", "decision_path": null},
+      "receipt": null
+    },
+    {
+      "id": "draft",
+      "depends_on": ["evidence"],
+      "status": "pending",
+      "owner": "writer",
+      "inputs": [],
+      "outputs": ["submissions/drafts/manuscript/project-draft.md"],
+      "evidence": [],
+      "approval": {"required": false, "state": "not_required", "decision_path": null},
+      "receipt": null
+    },
+    {
+      "id": "review",
+      "depends_on": ["draft"],
+      "status": "pending",
+      "owner": "reviewer",
+      "inputs": [],
+      "outputs": ["submissions/reviews/manuscript/project-review.md"],
+      "evidence": [],
+      "approval": {"required": false, "state": "not_required", "decision_path": null},
+      "receipt": null
+    }
+  ]
+}

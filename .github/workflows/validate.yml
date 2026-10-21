@@ -1,0 +1,25 @@
+name: Validate research skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate repository structure and skill metadata
+        run: python scripts/validate_repository.py
+      - name: Test research readiness checker
+        run: python scripts/research_status_tests.py

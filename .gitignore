@@ -1,0 +1,30 @@
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python and dependency caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+
+# Editor-local files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary document and analysis files
+~$*
+*.tmp
+*.bak
+
+# PDFs remain local on every branch; commit source registers instead.
+*.[pP][dD][fF]
