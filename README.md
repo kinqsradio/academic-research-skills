@@ -100,12 +100,12 @@ Before a task that requires registered local source files, also run:
 python3 scripts/validate_repository.py --require-local-papers
 ```
 
-The [validation workflow](.github/workflows/validate.yml) runs these checks on pushes to `main` and pull requests.
+The [validation workflow](.github/workflows/validate.yml) runs structure checks and checker tests on Python 3.10 and 3.12 for pushes to `main` and incoming pull requests, including forks. A separate public-template gate rejects common project records and tracked PDFs in this public upstream. It is automatically skipped in private template copies. See [script guidance](scripts/GUIDELINES.md) for detection limits.
 
 On Windows, use `py -3` or a `python` command selecting Python 3.10+. These checks validate repository structure and status-checker behavior. They do not verify research claims, rendered document quality, live assistant execution, ethics approval, or submission readiness.
 
 ## Contribute and reuse
 
-Contributions to reusable workflows and tooling are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), preserve research privacy, and keep changes to the public template free of project records. Reusable workflow changes require review and validation; consult [skill-creator](skills/skill-creator/SKILL.md) for the authoring procedure.
+Contributions to reusable workflows and tooling are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [fork, PR, and private-workspace walkthrough](docs/operations/branching/contributing-changes.md). Use the [issue forms](https://github.com/kinqsradio/academic-research-skills/issues/new/choose) for bugs, proposals, or evidence corrections, and follow [SECURITY.md](SECURITY.md) to report vulnerabilities privately. Keep changes to the public template free of project records. Reusable workflow changes require review and validation; consult [skill-creator](skills/skill-creator/SKILL.md) for the authoring procedure.
 
 Released under the [MIT License](LICENSE).

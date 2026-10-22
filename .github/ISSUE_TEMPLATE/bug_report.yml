@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible problem in a skill, script, template, or documentation.
+title: "[Bug]: "
+body:
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public content check
+      options:
+        - label: This report contains no credentials, participant data, private research, or vulnerability details.
+          required: true
+  - type: input
+    id: location
+    attributes:
+      label: Affected file and version
+      description: Repository-relative path and commit SHA, if known.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Use a minimal synthetic example. Include the command or explicit skill path and host/version if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Checks and limitations
+      description: Include sanitized output and distinguish observed behavior from inference.
