@@ -1,0 +1,32 @@
+name: Workflow improvement
+description: Propose a reusable skill, template, tooling, or documentation improvement.
+title: "[Proposal]: "
+body:
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public content check
+      options:
+        - label: This report contains no credentials, participant data, private research, or vulnerability details.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and intended user
+      description: Explain the recurring need and which existing workflow you examined.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change and scope
+      description: Describe expected output, alternatives, and what would remain a human decision.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and validation plan
+      description: Provide public source links and locators where applicable, plus a representative synthetic example.
+    validations:
+      required: true
