@@ -2,7 +2,7 @@
 
 Purpose: explain how external users and maintainers propose changes to the public template without publishing private project history. Status: reusable contribution procedure.
 
-The canonical published skill library is [`kinqsradio/academic-research-skills`](https://github.com/kinqsradio/academic-research-skills). Private research repositories and the creator's private `kinqsradio/agent-skill-lab` remain development and research workspaces. Changes do not synchronize automatically in either direction. Use [CONTRIBUTING.md](../../../CONTRIBUTING.md) for contribution scope and [branch-workflow.md](branch-workflow.md) for template promotion, research branches, naming, and attribution.
+The canonical published skill library is [`kinqsradio/academic-research-skills`](https://github.com/kinqsradio/academic-research-skills). Private research repositories and the maintainer's designated private counterpart remain development and research workspaces. Changes do not synchronize automatically in either direction. Use [CONTRIBUTING.md](../../../CONTRIBUTING.md) for contribution scope and [branch-workflow.md](branch-workflow.md) for template promotion, research branches, naming, and attribution.
 
 ## External contributors: fork and open a PR
 
@@ -63,7 +63,7 @@ git switch -c template/my-change origin/main
 
 Make or copy selected reusable changes, run the same checks, inspect every outgoing commit against `origin/main`, and push `template/my-change` to public `origin`. Open a PR against public `main`; direct write access does not replace review.
 
-The creator follows this path when promoting work from private `kinqsradio/agent-skill-lab`: use a fresh checkout of public `main`, copy only reviewed reusable changes, and submit the public PR. Do not add the public repository as a push destination for private research branches, or move private history into the public checkout. The private repository remains the development/research workspace; public `main` records the reviewed published version.
+The maintainer follows this path when promoting work from the designated private development repository: use a fresh checkout of public `main`, copy only reviewed reusable changes, and submit the public PR. Do not add the public repository as a push destination for private research branches, or move private history into the public checkout. The private repository remains the development/research workspace; public `main` records the reviewed published version.
 
 ## Checks and review
 
@@ -88,3 +88,5 @@ Use the [issue forms](https://github.com/kinqsradio/academic-research-skills/iss
 After a public change is merged, select the public files or edits needed by the private workspace. Create a `template/<change>` branch from the private repository's current `main`; copy those selected changes into that branch without merging unrelated histories. Review the diff, preserve private project content and configuration, run the private repository's validation, and promote the reviewed template-only change through its normal review process. Resolve any intentional local differences explicitly.
 
 Then follow [Bring template improvements into a project](branch-workflow.md#bring-template-improvements-into-a-project): inventory every active private `research/*` branch, merge the updated private `main`, preserve project records, validate each branch, and compare canonical `skills/` against private `main`. Report blocked or explicitly archived branches. This is a deliberate, reviewed import; a public merge neither updates the private workspace automatically nor authorizes publication of its research branches.
+
+For reusable skill changes, [paired skill synchronization](skill-synchronization.md) defines completion: synchronize the entire reviewed `skills/` library, including removals, across public `main`, private `main` and every active private research branch. Selecting only some changed skill files does not satisfy that requirement. Preserve unrelated private content and configuration, and report pending public publication or blocked private branches as incomplete synchronization.

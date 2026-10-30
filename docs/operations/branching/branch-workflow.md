@@ -36,11 +36,11 @@ When a project branch produces a reusable improvement, including a new skill, fi
 
 Review the complete file list and diff before promotion. Cherry-pick only the dedicated, reviewed template commit onto `main`. If the source commit also contains project content, do not cherry-pick it; recreate the reusable change as a clean file-scoped commit on a `template/<change>` branch created from `main`, then review it before promotion. Preserve empty scaffolding where the template needs it, and keep every populated register, PDF, note, plan, draft, review, and project audit out of the promotion.
 
-Push or publish a template improvement only when the human has authorized that external action. Before doing so, verify the destination branch is `main` and inspect the outgoing commit paths and diff for project-specific material and research PDFs. Never merge a research branch into `main`, manually or automatically; promote only the reviewed template-only commits.
+Push or publish a template improvement only when the human has authorized that external action, including a standing instruction for the designated pair under [paired skill synchronization](skill-synchronization.md). Public skill publication must use that procedure's PR and exact-candidate CI/review gates. Before doing so, verify the intended repository and destination branch and inspect the outgoing commit paths and diff for project-specific material and research PDFs. Never merge a research branch into `main`, manually or automatically; promote only the reviewed template-only commits.
 
 ## Bring template improvements into a project
 
-Every new or updated reusable skill must reach all active `research/*` branches as well as `main` in the same maintenance task. Inventory local and remote research branches, fetch current remote state, and merge the updated `main` into each active research branch. Do not consider skill maintenance complete after updating only the template. Preserve unrelated work; if a branch cannot be synchronized, name it and the blocker in the handoff instead of claiming all branches are current. Archived branches may stay frozen only when explicitly designated as archived.
+Every reusable skill change, including creation, gap fixes, renames, deletions, and supporting-resource updates, follows [paired skill synchronization](skill-synchronization.md). That canonical procedure owns pair verification, safe transfer between independent histories, public PR gates, private template integration, and propagation to all active private `research/*` branches in the same task. Preserve unrelated work and research records; report blocked or explicitly archived branches. A pending public PR or an unsynchronized active branch is incomplete maintenance.
 
 For each active research branch:
 
@@ -64,4 +64,4 @@ Resolve any conflicts while preserving project evidence and records. Review the 
 - On every branch, inspect staged and outgoing commits and confirm no research PDF is included; preserve persistent source metadata even when local PDFs are absent.
 - Before template promotion, review the exact files and diff; promote only a dedicated template-only commit.
 - Before pushing, confirm human authorization, destination branch, outgoing file list, and the absence of research PDFs throughout outgoing commits.
-- Before finishing skill maintenance, merge updated `main` into every active research branch, validate each result, compare `skills/` with `main`, and report any unsynchronized branches.
+- Before finishing skill maintenance, complete [paired skill synchronization](skill-synchronization.md): verify the merged public PR, private template and all active private research branches, complete `skills/` tree equality, and pushed remote tips; report pending or blocked work accurately.

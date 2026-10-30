@@ -29,6 +29,6 @@ The lead gives bounded worker instructions, checks acceptance criteria, and inte
 
 Follow the canonical [branch and attribution policy](../docs/operations/branching/branch-workflow.md#provider-neutral-names-and-attribution): use `research/<project>` for research and `template/<change>` for reusable improvements. Keep branch names and PR titles provider-neutral and omit automated assistant attribution in commits and PRs. Required academic AI-use disclosures remain applicable.
 
-New or updated reusable skills must be synchronized from `main` into every active `research/*` branch in the same maintenance task. Validate each branch and confirm its canonical `skills/` matches `main`; report blocked or intentionally archived branches explicitly. Follow the branch workflow for merging, preserving project records, and authorized pushes.
+Every reusable skill change, including gap fixes, renames, deletions, and supporting resources, must follow [paired skill synchronization](../docs/operations/branching/skill-synchronization.md) in the same maintenance task. It governs the designated public/private pair, publication gates, and propagation into every active private `research/*` branch; report incomplete or blocked synchronization explicitly.
 
 For repeatable multi-stage work, academic-pipeline includes a machine-readable run manifest and read-only readiness checker. It checks dependencies, input versions, and recorded gates; it does not execute research or certify evidence. Use the reviewer's claim/exhibit audit for source support and exact-candidate coverage.
